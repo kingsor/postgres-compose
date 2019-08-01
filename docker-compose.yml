@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  database:
+    image: postgres:latest
+    container_name: pgsql-db
+    ports:
+      - 5432:5432
+    restart: always
+    volumes:
+      - pgsql-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: "password"
+volumes:
+  pgsql-data:
